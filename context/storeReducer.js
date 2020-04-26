@@ -15,6 +15,11 @@ const StoreReducer = (state, action) => {
                 ...state,
                 restaurantProfile: action.payload
             };
+        case "SET_SHOPPING_CART":
+            return{
+                ...state,
+                shoppingCart: action.payload
+            };
         case 'REMOVE_RESTAURANTS':
             return {
                 ...state,

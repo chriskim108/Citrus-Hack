@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {
     View,
     Text,
@@ -8,10 +8,16 @@ import {
     FlatList,
     SafeAreaView
 } from 'react-native';
-import {Card, CardItem, Left, Body, Right} from 'native-base'
 import RestaurantListItem from './RestaurantListItem'
+import { Actions } from 'react-native-router-flux';
+import {Context} from '../../context/store'
 
 function RestuarantBar (props){
+  const [state, dispatch] = useContext(Context);
+  function onPressRestaurant (item){
+    dispatch({type: 'SET_RESTAURANT_PROFILE', payload: item});
+    Actions.restaurantProfile();
+  }
 
   return (
     <SafeAreaView style={styles.container} >
@@ -21,18 +27,21 @@ function RestuarantBar (props){
             style={{marginRight:10, marginLeft:10, borderRadius:10, backgroundColor:'red', height:100, width: 300}}
             data = {props.restaurants}
             style={{marginRight:10, marginLeft:10, borderRadius:10,}}
-            renderItem = {(restaurant, i)=>
-                <RestaurantListItem
-                  title={restaurant.item.title}
-                  posted={restaurant.item.posted} 
-                  image={restaurant.item.image} 
-                  type={restaurant.item.type}
-                  distance={restaurant.item.distance}
-                  data= {restaurant.item}
-                />
+            renderItem = {(restaurant)=> {
+                return(
+                <TouchableOpacity style={{flex:1}} onPress={()=>onPressRestaurant(restaurant.item)}>
+                  <RestaurantListItem
+                    title={restaurant.item.title}
+                    posted={restaurant.item.posted} 
+                    image={restaurant.item.image} 
+                    type={restaurant.item.type}
+                    distance={restaurant.item.distance}
+                    data= {restaurant.item}
+                  />
+                </TouchableOpacity>
+                )}
             }
             initialNumToRender = {10}
-            keyExtractor={restaurant => restaurant.id}
         />
     </SafeAreaView>
   );

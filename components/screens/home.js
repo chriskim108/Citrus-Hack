@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import {Map, RestuarantListItem, RestaurantBar} from '../common/index'
+import {Map, RestuarantListItem, RestaurantBar, BottomNavBar} from '../common/index'
 import {Context} from '../../context/store';
 const  Home =()=>{
     const [state, dispatch] = useContext(Context);
@@ -9,10 +9,13 @@ const  Home =()=>{
         // console.log(state.restaurants[0].title)
     })
     return (
+        <View style={{flex:1}}>
         <SafeAreaView style={styles.container}>
             <Map state={state}/>
             <RestaurantBar restaurants={state.restaurants}/>
+            <BottomNavBar state={state}/>
         </SafeAreaView>
+        </View>
     )
 }
 const styles = StyleSheet.create({

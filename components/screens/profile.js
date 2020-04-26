@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { StyleSheet, View, ScrollView, Text, TouchableOpacity} from 'react-native';
+import {Card, CardItem, Left, Body, Right, Button} from 'native-base'
 class Profile extends React.Component {
     render() {
         return (

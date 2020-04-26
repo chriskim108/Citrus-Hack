@@ -1,18 +1,13 @@
 import React from 'react'
 import {
-    View,
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
 } from 'react-native';
-import {Card, CardItem, Left, Body, Right} from 'native-base'
-import { Actions } from 'react-native-router-flux';
+import {Card, CardItem, Body} from 'native-base'
 
 function RestaurantListItem (props){
-
   return (
-    <TouchableOpacity style={{flex:1, }} onPress={()=>Actions.restaurantProfile()}>
       <Card style={styles.container}>
         <CardItem>
           <Text style={styles.title}>{props.title}</Text>
@@ -29,15 +24,12 @@ function RestaurantListItem (props){
         </CardItem>
         <CardItem></CardItem>
       </Card>
-    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container:{
     width:300,
-    // marginTop:'2%',
-    // borderRadius:5
   },
   imageSize:{
     width:"100%",
@@ -45,8 +37,6 @@ const styles = StyleSheet.create({
   },
   bodyStyle:{
     flex:1,
-    // alignItems:'center',
-    // justifyContent:"space-around"
   },
   title:{
     fontWeight:'bold',
