@@ -24,7 +24,7 @@ const Confirmation =()=>{
                     <Text style={styles.infoTexts}>Pickup Time</Text>
                 </Left>
                 <Body style={{flex:1}}></Body>
-                <Right style={{flex:5, alignSelf:'flex-end'}}><Text style={styles.descriptionTexts}>11:30Am</Text></Right>
+                <Right style={{flex:5, alignSelf:'flex-end'}}><Text style={styles.descriptionTexts}>12:30Am</Text></Right>
             </Card>
             <Card style={styles.card}>
                 <Left style={{flex:1, alignSelf:'flex-start', flexDirection:'row'}}>

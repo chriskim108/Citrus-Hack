@@ -5,7 +5,7 @@ import { Button} from 'native-base'
 const  Landing =()=>{
     return (
         <View style={{flex:1}}>
-            <Text style={styles.textTitle}>PlayFul</Text>
+            <Text style={styles.textTitle}>Plateful</Text>
             <Button style={styles.button} onPress={()=>Actions.home()}><Text style={styles.submitText}>CONTINUE</Text></Button>
         </View>
     )

@@ -21,7 +21,7 @@ function RestuarantBar (props){
 
   return (
     <SafeAreaView style={styles.container} >
-        <Text style={styles.topTitle}>Near By Restaurants</Text>
+        <Text style={styles.topTitle}>Nearby Restaurants</Text>
         <FlatList
             horizontal
             style={{marginRight:10, marginLeft:10, borderRadius:10, backgroundColor:'red', height:100, width: 300}}

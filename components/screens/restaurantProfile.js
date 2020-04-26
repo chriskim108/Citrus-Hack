@@ -28,7 +28,17 @@ function RestuarantProfile(){
       totalPrice: globalPrice,
       items: globalItems
     }
-    dispatch({type: 'SET_SHOPPING_CART', payload: load});
+    let newShoppingCart = state.shoppingCart
+    console.log(state.shoppingCart)
+    if(newShoppingCart.count){
+      newShoppingCart.count = newShoppingCart.count+globalCount
+      newShoppingCart.totalPrice+=globalPrice
+      newShoppingCart.items = newShoppingCart.items.concat(globalItems)
+    }else{
+      newShoppingCart = load
+    }
+    console.log(newShoppingCart)
+    dispatch({type: 'SET_SHOPPING_CART', payload: newShoppingCart});
     Actions.home();
   }
   return (

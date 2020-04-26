@@ -20,22 +20,22 @@ class Map extends React.Component {
   componentDidMount(){
     this.setState({ marginBottom: 0 }) 
   }
-  onMapReady = () => {
+  // onMapReady = () => {
     
-    this.setState({ marginBottom: 0 }) 
-  } 
+  //   this.setState({ marginBottom: 0 }) 
+  // } 
     render() {
     return (
       <SafeAreaView style={styles.container}>
         <MapView
-          onMapReady={()=>this.onMapReady()}
+          // onMapReady={()=>this.onMapReady()}
           style={styles.mapContainer, {        position: 'absolute',
           top: 0,
           left: 0,
           bottom: 0,
           right: 0,
           height:'90%',marginBottom:this.state.marginBottom}}
-          initialRegion={{
+          region={{
             latitude: 40.76089549859875,
             longitude: -73.83078768706343,
             latitudeDelta: 0.01,
@@ -52,16 +52,15 @@ class Map extends React.Component {
               longitude: -73.83078768706343
             }}>
             <View style={styles.currentUser}></View></Marker>}
-          {this.props.state.restaurants.map(marker => {
-            return <Marker
+          {this.props.state.restaurants.map(marker => <Marker
             coordinate={{
               latitude: marker.latitude,
               longitude: marker.longitude
             }}
-              title={marker.title}
+              // title={marker.title}
             >
             </Marker>
-    })}
+    )}
         </MapView>
       </SafeAreaView>
     );

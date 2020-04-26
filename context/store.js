@@ -83,7 +83,7 @@ const initialState = {
                 {
                     id:4893,
                     name: "Shrimp Fried Rice",
-                    ingredients: "Shrimp Fried Rice ",
+                    ingredients: "Shrimp, rice, bean sprouts, and green peppers",
                     priceBefore: 12.99,
                     priceAfter: 6.99,
                     quantity:4,
@@ -116,7 +116,7 @@ const initialState = {
             avaliable:[
                 {
                     id:2498567,
-                    name: "Crap soup dumplings",
+                    name: "Crab Soup Dumplings",
                     ingredients: "Crab meat, dumpling skin, scallion, ginger, and garlic",
                     priceBefore: 9.99,
                     priceAfter: 6.99,
@@ -136,7 +136,7 @@ const initialState = {
             unavaliable:[
                 {
                     id:395346286,
-                    name: "Pork soup dumplings",
+                    name: "Pork Soup Dumplings",
                     ingredients: "Pork, dumpling skin, scallion, ginger, and garlic",
                     priceBefore: 8.99,
                     priceAfter: 6.99,
